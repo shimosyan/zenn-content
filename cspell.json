@@ -3,7 +3,12 @@
   "language": "en",
   "words": [
       "zenn",
-      "jamf"
+      "jamf",
+      "aws",
+      "awscli",
+      "terraform",
+      "tfstate",
+      "tfvars"
   ],
   "flagWords": [
       "hte"
