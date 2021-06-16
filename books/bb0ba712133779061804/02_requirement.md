@@ -8,17 +8,17 @@ title: "開発環境の準備"
 
 - **Okta**
 - **GitHub**
-  - Privateリポジトリで運用する場合は、GitHub Actionsの従量課金契約が必要です。
+  - Private リポジトリで運用する場合は、GitHub Actions の従量課金契約が必要です。
 - **Amazon Web Service**
-  - S3とIAMを使用します。
+  - S3 と IAM を使用します。
 
 ## ✅ Terraformのインストール
 
-Terraformを既にインストール済みでしたら、こちらのセクションはスキップしてください。
+Terraform を既にインストール済みでしたら、こちらのセクションはスキップしてください。
 （ちなみに、本書ではTerraform 1.0.0に準拠しています。）
 
 :::message
-インストールには[Homebrew](https://brew.sh/index_ja)を使用します。Homebrewが導入されていない場合は各自導入してください。
+インストールには[Homebrew](https://brew.sh/index_ja)を使用します。Homebrew が導入されていない場合は各自導入してください。
 :::
 
 ```shell
@@ -27,13 +27,13 @@ brew install terraform
 
 ## ✅ AWS CLIのインストール・設定
 
-Terraformでは、コードの内容とOktaの実データとの照らし合わせのために`*.tfstate`ファイルが生成されます。
+Terraform では、コードの内容と Okta の実データとの照らし合わせのために`*.tfstate`ファイルが生成されます。
 
-通常はローカルに作成されGit管理を行いますが、今回はGitHub Actionsで自動反映を行うのでGit管理せずに常に最新を維持するためにAWS S3を使います。
+通常はローカルに作成されGit管理を行いますが、今回は GitHub Actions で自動反映を行うのでGit管理せずに常に最新を維持するために AWS S3 を使います。
 
-そのため、AWSとやり取りするためにコマンドラインツールのインストール・設定を行います。
+そのため、AWS とやり取りするためにコマンドラインツールのインストール・設定を行います。
 
-AWSCLIを既にインストール済みでしたら、こちらのセクションはスキップしてください。
+AWSCLI を既にインストール済みでしたら、こちらのセクションはスキップしてください。
 
 ### インストール
 
@@ -45,8 +45,8 @@ brew install awscli
 
 ```shell
 $ aws configure
-AWS Access Key ID [None]: （自分のAWSアカウントのアクセスキー）
-AWS Secret Access Key [None]: （自分のAWSアカウントのシークレットアクセスキー）
+AWS Access Key ID [None]: （自分の AWS アカウントのアクセスキー）
+AWS Secret Access Key [None]: （自分の AWS アカウントのシークレットアクセスキー）
 Default region name [None]: ap-northeast-1（東京リージョン）
-Default output format [None]: json　　（空だとJSON）
+Default output format [None]: json　　（空だと JSON）
 ```
