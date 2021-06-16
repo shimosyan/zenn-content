@@ -1,5 +1,5 @@
 ---
-title: "Terraform に Okta のコードを記述する - その1"
+title: "Terraform に Okta のコードを記述する - その 1"
 ---
 
 ## ⚙️ Terraform のディレクトリ構成
@@ -56,7 +56,7 @@ Okta の管理画面に入って Security → API → Create Token を選択。
 
 ![トークンを作成](https://storage.googleapis.com/zenn-user-upload/4b587b135b5504449e571a73.png)
 
-トークンが発行されるので、コピーボタンを押してどこかに控えます。Git管理下のファイルに記述しないようにだけ注意してください。
+トークンが発行されるので、コピーボタンを押してどこかに控えます。Git 管理下のファイルに記述しないようにだけ注意してください。
 
 ![トークン発行](https://storage.googleapis.com/zenn-user-upload/77127c11475ba66425664d3d.png)
 
@@ -70,7 +70,7 @@ export OKTA_API_TOKEN="XXXXXXXX"
 
 ## 🔨 Okta にグループを作成
 
-Terraform で Okta のグループを2つ作成してみます。
+Terraform で Okta のグループを 2 つ作成してみます。
 
 ```bash:./group.tf
 resource "okta_group" "test_group_1" {
@@ -95,7 +95,7 @@ Okta のグループに追加されていることを確認できます。
 
 ![グループが追加された](https://storage.googleapis.com/zenn-user-upload/937ecdd838c45e9a69565a40.png)
 
-既に Okta にグループがあり、それを Terraform の設定に紐付けたい場合は「Terraform に Okta のコードを記述する - その2（執筆中）」をご覧ください。
+既に Okta にグループがあり、それを Terraform の設定に紐付けたい場合は「Terraform に Okta のコードを記述する - その 2（執筆中）」をご覧ください。
 
 ## 参考資料
 

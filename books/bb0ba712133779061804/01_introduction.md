@@ -6,9 +6,9 @@ title: "はじめに"
 
 本書は IDaaS である Okta を Web コンソールではなく、コード上で設定を定義・反映できる仕組みを構築してみようというチュートリアルとなります。
 
-コード管理の仕組みはTerraformを使います。
+コード管理の仕組みは Terraform を使います。
 
-Okta が [Terraform の Provider を公式で提供](https://registry.terraform.io/providers/okta/okta/latest/docs)してくれているのでこれを使うことで、Okta の設定もコードで書いてOktaに反映することができます。
+Okta が [Terraform の Provider を公式で提供](https://registry.terraform.io/providers/okta/okta/latest/docs)してくれているのでこれを使うことで、Okta の設定もコードで書いて Okta に反映できます。
 
 本書では以下ができるようになることを目指します。
 
@@ -22,7 +22,7 @@ Okta が [Terraform の Provider を公式で提供](https://registry.terraform.
 
 IaC の思想にのっとり、インフラのコード管理を行うツールです。
 
-AWS や GCP などのクラウドサービスに対して設定をコードで書くことができ、書いたコードのままにサービスに設定を反映することができます。
+AWS や GCP などのクラウドサービスに対して設定をコードで書くことができ、書いたコードのままにサービスに設定を反映できます。
 
 Terraform ではクラウドサービスに定義する設定を「リソース」と呼びます。
 

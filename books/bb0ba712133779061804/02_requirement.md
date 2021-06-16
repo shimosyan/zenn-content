@@ -15,7 +15,7 @@ title: "開発環境の準備"
 ## ✅ Terraformのインストール
 
 Terraform を既にインストール済みでしたら、こちらのセクションはスキップしてください。
-（ちなみに、本書ではTerraform 1.0.0に準拠しています。）
+（ちなみに、本書では Terraform 1.0.0 に準拠しています）
 
 :::message
 インストールには[Homebrew](https://brew.sh/index_ja)を使用します。Homebrew が導入されていない場合は各自導入してください。
@@ -29,7 +29,7 @@ brew install terraform
 
 Terraform では、コードの内容と Okta の実データとの照らし合わせのために`*.tfstate`ファイルが生成されます。
 
-通常はローカルに作成されGit管理を行いますが、今回は GitHub Actions で自動反映を行うのでGit管理せずに常に最新を維持するために AWS S3 を使います。
+通常はローカルに作成され Git 管理を行いますが、今回は GitHub Actions で自動反映を行うので Git 管理せずに常に最新を維持するために AWS S3 を使います。
 
 そのため、AWS とやり取りするためにコマンドラインツールのインストール・設定を行います。
 
