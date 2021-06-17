@@ -109,7 +109,7 @@ resource "設定の種類" "ID" {
 
 この`resource`ブロックの中のプロパティには、そのリソースの内容を記述します。種類ごとに記述すべき内容は異なるので、[公式リファレンス](https://registry.terraform.io/providers/okta/okta/latest/docs)や[公式サンプル](https://github.com/okta/terraform-provider-okta/tree/master/examples)を見ながら書きましょう。
 
-今回のは`okta_group`空のグループなので、`name`と`description`を書きましたが、`user`を使用することで Okta ユーザーを指定することもできます。
+今回は Okta の空のグループなので、`name`と`description`を書きましたが、`user`を使用することで Okta ユーザーを指定することもできます。
 
 ### Okta に適用する
 
