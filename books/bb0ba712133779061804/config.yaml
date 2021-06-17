@@ -10,3 +10,4 @@ chapters:
   - 03_setup
   - 04_terraform-tutorial
   - 05_terraform-okta_01
+  - 06_terraform-okta_02

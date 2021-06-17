@@ -1,5 +1,5 @@
 ---
-title: "Terraform に Okta のコードを記述する - その 1"
+title: "Terraform に Okta のコードを記述する - 基本編"
 ---
 
 ## ⚙️ Terraform のディレクトリ構成
