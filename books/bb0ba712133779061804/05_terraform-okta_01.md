@@ -12,9 +12,11 @@ Terraform は基本的に同じディレクトリに属する`*.tf`ファイル�
 
 ## ⚙️ Terraform の準備
 
-Terraform の基本設定を書きます。
+Terraform の基本設定を書くために`./main.tf`ファイルを作ります。
 
 ここでは`terraform.tfstate`の保存先と Okta の Terraform Provider の指定、接続先の Okta 環境を指定します。
+
+以下のように書いてみましょう。
 
 ```bash:./main.tf
 terraform {
@@ -70,7 +72,9 @@ export OKTA_API_TOKEN="XXXXXXXX"
 
 ## 🔨 Okta にグループを作成
 
-Terraform で Okta のグループを 2 つ作成してみます。
+Terraform を使って、空の Okta グループを 2 つ作成してみます。
+
+`./group.tf`ファイルを新たに作り以下のように記述してみましょう。公式のリファレンスは[こちら](https://registry.terraform.io/providers/okta/okta/latest/docs/resources/group)です。
 
 ```bash:./group.tf
 resource "okta_group" "test_group_1" {
@@ -83,6 +87,31 @@ resource "okta_group" "test_group_2" {
   description = "これはテスト用のグループです"
 }
 ```
+
+### Terraform の記法について
+
+Terraform では Okta などのクラウドサービスにはリソース（`resource`）単位で設定していきます。
+
+今回は Okta のグループが 2 つのため、リソースの定義が 2 つとなります。
+
+`resource`が書かれている行には、今回の例ですと`okta_group`や`test_group_1`が書かれています。
+リソースの構成は以下のようになります。
+
+```bash
+resource "設定の種類" "ID" {
+  # 各プロパティ
+}
+```
+
+「設定の種類」は作成する設定ごとに固定です。Okta のグループは`okta_group`ですが、例えば`okta_user`にすると Okta のユーザーを定義できます。
+
+「ID」は Terraform 内で扱われるユニークな ID です。プロジェクト内で一意に指定する必要があります。
+
+この`resource`ブロックの中には、そのリソースの内容を記述します。種類ごとに記述すべき内容は異なるので、[公式リファレンス](https://registry.terraform.io/providers/okta/okta/latest/docs)や[公式サンプル](https://github.com/okta/terraform-provider-okta/tree/master/examples)を見ながら書きましょう。
+
+今回のは`okta_group`空のグループなので、`name`と`description`を書きましたが、`user`を使用することで Okta ユーザーを指定することもできます。
+
+### Okta に適用する
 
 これを Okta に適用します。以下のコマンドを叩いて適用させます。
 
