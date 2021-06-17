@@ -124,7 +124,7 @@ Okta のグループに追加されていることを確認できます。
 
 ![グループが追加された](https://storage.googleapis.com/zenn-user-upload/937ecdd838c45e9a69565a40.png)
 
-既に Okta にグループがあり、それを Terraform の設定に紐付けたい場合は「Terraform に Okta のコードを記述する - その 2（執筆中）」をご覧ください。
+既に Okta にグループがあり、それを Terraform の設定に紐付けたい場合は「Terraform に Okta のコードを記述する - 応用編」をご覧ください。
 
 ## 参考資料
 
