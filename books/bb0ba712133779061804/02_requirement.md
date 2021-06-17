@@ -27,9 +27,10 @@ brew install terraform
 
 ## ✅ AWS CLIのインストール・設定
 
-Terraform では、コードの内容と Okta の実データとの照らし合わせのために`*.tfstate`ファイルが生成されます。
+Terraform では、コードの内容と Okta の実データとの照らし合わせのために`terraform.tfstate`ファイルが生成されます。
 
-通常はローカルに作成され Git 管理を行いますが、今回は GitHub Actions で自動反映を行うので Git 管理せずに常に最新を維持するために AWS S3 を使います。
+通常はローカルに作成され Git 管理を行いますが、今回の目的のように GitHub Actions を使って自動反映を行うと最新の`terraform.tfstate`が Git 管理にできません。
+常に最新の`terraform.tfstate`を保持するために今回は保存先に AWS S3 を使います。
 
 そのため、AWS とやり取りするためにコマンドラインツールのインストール・設定を行います。
 
