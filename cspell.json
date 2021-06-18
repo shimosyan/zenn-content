@@ -9,7 +9,8 @@
       "awscli",
       "terraform",
       "tfstate",
-      "tfvars"
+      "tfvars",
+      "rockstar"
   ],
   "flagWords": [
       "hte"

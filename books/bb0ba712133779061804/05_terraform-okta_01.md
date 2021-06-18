@@ -98,14 +98,14 @@ Terraform では Okta などのクラウドサービスにはリソース（`res
 リソースの構成は以下のようになります。
 
 ```bash
-resource "設定の種類" "ID" {
+resource "設定の種類" "RESOURCE_ID" {
   # 各プロパティ
 }
 ```
 
 「設定の種類」はクラウドサービスのどの設定かを指定します。`okta_group`は Okta のグループを定義であることを示します。例えば`okta_user`にすると Okta のユーザーを定義できます。
 
-「ID」は Terraform 内で扱われるユニークな ID です。プロジェクト内で一意に指定する必要があります。
+「RESOURCE_ID」は Terraform 内で扱われるユニークな ID です。プロジェクト内で一意に指定する必要があります。
 
 この`resource`ブロックの中のプロパティには、そのリソースの内容を記述します。種類ごとに記述すべき内容は異なるので、[公式リファレンス](https://registry.terraform.io/providers/okta/okta/latest/docs)や[公式サンプル](https://github.com/okta/terraform-provider-okta/tree/master/examples)を見ながら書きましょう。
 
