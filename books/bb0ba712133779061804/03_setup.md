@@ -8,9 +8,12 @@ Terraform で実装するには準備が必要のためいくつか設定しま�
 
 ### リポジトリの初期化
 
+Git リポジトリのメインブランチは`main`とします。
+
 ```shell
 git init okta-terraform
 cd okta-terraform
+git branch -m main
 ```
 
 ### .gitignore の作成

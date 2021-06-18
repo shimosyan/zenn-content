@@ -11,3 +11,5 @@ chapters:
   - 04_terraform-tutorial
   - 05_terraform-okta_01
   - 06_terraform-okta_02
+  - 07_github-action_01
+  - 08_github-action_02

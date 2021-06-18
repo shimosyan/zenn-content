@@ -2,6 +2,8 @@
 title: "Terraform に Okta のコードを記述する - 基本編"
 ---
 
+ここでは Terraform を使って Okta を定義を行います。
+
 ## ⚙️ Terraform のディレクトリ構成
 
 Terraform は基本的に同じディレクトリに属する`*.tf`ファイルは自動で認識します。
