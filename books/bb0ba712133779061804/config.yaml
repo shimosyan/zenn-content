@@ -1,7 +1,7 @@
 title: "Okta を Terraform と GitHub Actions を使ってコード管理するチュートリアル"
 summary: "IdP である Okta を公式の Terraform Provider を使ってコード管理+設定の監視をできるようにします。"
 topics: ["Okta", "Terraform", "GitHubActions"]
-published: false
+published: true
 price: 0 # 有料の場合200〜5000
 toc_depth: 3
 # 本に含めるチャプターを順番に並べましょう
