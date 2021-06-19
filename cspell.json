@@ -13,7 +13,8 @@
     "tfvars",
     "rockstar",
     "proofdict",
-    "libexec"
+    "libexec",
+    "exitcode"
   ],
   "flagWords": [
     "hte"
