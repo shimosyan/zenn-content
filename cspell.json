@@ -2,17 +2,20 @@
   "version": "0.1",
   "language": "en",
   "words": [
-      "zenn",
-      "textlint",
-      "jamf",
-      "aws",
-      "awscli",
-      "terraform",
-      "tfstate",
-      "tfvars",
-      "rockstar"
+    "zenn",
+    "textlint",
+    "jamf",
+    "aws",
+    "awscli",
+    "hashicorp",
+    "terraform",
+    "tfstate",
+    "tfvars",
+    "rockstar",
+    "proofdict",
+    "libexec"
   ],
   "flagWords": [
-      "hte"
+    "hte"
   ]
 }

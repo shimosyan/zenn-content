@@ -7,11 +7,11 @@
       }
     },
     "preset-ja-technical-writing": true,
-    "spellcheck-tech-word": true,
-    "prh": {
-      "rulePaths": [
-        "./prh.yml"
-      ]
-    }
+    "preset-jtf-style": {
+      "3.1.1.全角文字と半角文字の間": false
+    },
+    "@proofdict/proofdict": {
+      "dictURL": "https://tanabebe.github.io/proof-dictionary/"
+    },
   }
 }
