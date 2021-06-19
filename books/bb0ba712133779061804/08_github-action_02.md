@@ -1,5 +1,5 @@
 ---
-title: "GitHub Actions を使って Okta と Terraform に差異が起きてないか監視する"
+title: "GitHub Actions を使って Okta と Terraform に差分が起きてないか監視する"
 ---
 
 ここでは編集されたコードを GitHub Actions を使って Okta の設定が Terraform（`main`ブランチ）と差異がないか監視する仕組みを整えていきます。
@@ -75,7 +75,7 @@ jobs:
 # 以下は Workflow の成否をチャットなどに通知を行うときの処理です。もし必要あったら使ってください。
     - name: Notify Difference Message
       if: failure() && steps.terraform_diff_check.outcome == 'failure'
-      run: # デプロイ失敗時の通知処理
+      run: # 差分が見つかったときに通知処理
 ```
 
 こちらの Workflow も同様に、Okta の差分検知時に通知できるステップを実装しています。
