@@ -8,12 +8,17 @@ Terraform で実装するには準備が必要のためいくつか設定しま�
 
 ### リポジトリの初期化
 
+先に GitHub にリポジトリを作っておきます。
 Git リポジトリのメインブランチは`main`とします。
 
 ```shell
-git init okta-terraform
-cd okta-terraform
+git init
 git branch -m main
+echo "# Okta-Terraform" >> README.md
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/xxxxxx/xxxxxxxx.git # 作成した GitHub リポジトリ
+git push -u origin main
 ```
 
 ### .gitignore の作成
@@ -38,8 +43,8 @@ AWS のコンソールにサインインして S3 の管理画面から「バケ
 
 バケットは以下の設定で作成します。それ以外はデフォルトのままで構いません。
 
-- バケット名: `terraform`
-- バケットのバージョニング: `有効にする`
+- バケット名：`terraform`
+- バケットのバージョニング：`有効にする`
 
 ![バケット名の設定](https://storage.googleapis.com/zenn-user-upload/fbc5edfded1e2bfa609c55ee.png)
 
