@@ -46,7 +46,7 @@ brew install awscli
 
 ```shell
 $ aws configure
-AWS Access Key ID [None]: （自分の AWS アカウントのアクセスキー）
+AWS Access Key ID [None]: （自分の AWS アカウントのアクセスキー ID）
 AWS Secret Access Key [None]: （自分の AWS アカウントのシークレットアクセスキー）
 Default region name [None]: ap-northeast-1（東京リージョン）
 Default output format [None]: json　　（空だと JSON）
