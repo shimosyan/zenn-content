@@ -86,7 +86,7 @@ Secret 名は以下のようにしてください。
 
 ![GitHub Secretの保存状況](https://storage.googleapis.com/zenn-user-upload/bfe27040dd436da192222e71.png)
 
-その他、必要あればチャットツールなどの API キーもここで登録できます。
+その他、必要あれば通知に使うチャットツールなどの API キーもここで登録できます。
 
 ## 🔨 自動デプロイ用 GitHub Actions Workflow の実装
 
@@ -118,17 +118,17 @@ jobs:
         shell: bash
 
     steps:
-    - name: Checkout
+    - name: Checkout # GitHub のリポジトリを WorkingDirectory に Pull
       uses: actions/checkout@v2
 
-    - name: Configure AWS credentials
+    - name: Configure AWS credentials # AWSCLI をインストール及び Credential の設定
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-northeast-1
 
-    - name: Setup Terraform
+    - name: Setup Terraform # Terraform をインストール
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.0.0
@@ -156,6 +156,13 @@ jobs:
       if: failure() && steps.notify_success_message.outcome != 'failure'
       run: # デプロイ失敗時の通知処理
 ```
+
+この Workflow のコードでは Okta への反映の成否を通知できるステップを実装しています。
+
+通知処置は割愛するのでお使いのチャットツールなど似合わせてカスタマイズして使ってください。
+（「GitHub Actions Slack 通知」で調べるといっぱい出てきます）
+
+もし、通知を使わないときは`Notify Success Message`と`Notify Failure Message`のブロックを削除してください。
 
 ## 📄 参考資料
 
