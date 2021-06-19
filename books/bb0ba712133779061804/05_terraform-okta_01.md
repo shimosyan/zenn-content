@@ -128,7 +128,7 @@ Okta のグループに追加されていることを確認できます。
 
 既に Okta にグループがあり、それを Terraform の設定に紐付けたい場合は「Terraform に Okta のコードを記述する - 応用編」をご覧ください。
 
-## 参考資料
+## 📄 参考資料
 
 - <https://qiita.com/kohey18/items/38400d8c498baa0a0ed8>
 - <https://registry.terraform.io/providers/okta/okta/latest/docs>

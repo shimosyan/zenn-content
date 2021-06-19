@@ -121,7 +121,7 @@ resource "okta_group_rule" "group_rule_1" {
 }
 ```
 
-## 参考資料
+## 📄 参考資料
 
 - <https://registry.terraform.io/providers/okta/okta/latest/docs/resources/group>
 - <https://registry.terraform.io/providers/okta/okta/latest/docs/resources/group_rule>
