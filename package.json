@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/shimosyan/zenn-content#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.85"
+    "zenn-cli": "^0.1.91"
   },
   "devDependencies": {
     "@proofdict/textlint-rule-proofdict": "^3.1.1",
