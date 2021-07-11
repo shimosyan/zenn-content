@@ -6,7 +6,7 @@ title: "GitHub Actions を使って Okta と Terraform に差分が起きてな�
 
 ## ❓ なぜ監視が必要か
 
-Terraform は Okta の設定をコード管理ができ、GitHubを組み合わせることで Okta の変更管理が実現します。
+Terraform は Okta の設定をコード管理ができ、GitHub を組み合わせることで Okta の変更管理が実現します。
 
 しかし、Okta 側で誰かが設定を変更してしまうと、この変更管理を活かすことができません。
 
