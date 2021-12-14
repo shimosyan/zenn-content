@@ -15,7 +15,8 @@
     "rockstar",
     "proofdict",
     "libexec",
-    "exitcode"
+    "exitcode",
+    "jsonencode"
   ],
   "flagWords": [
     "hte"
