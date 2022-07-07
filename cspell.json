@@ -6,6 +6,7 @@
     "zenn",
     "textlint",
     "jamf",
+    "azuread",
     "aws",
     "awscli",
     "hashicorp",
@@ -16,9 +17,7 @@
     "proofdict",
     "libexec",
     "exitcode",
-    "jsonencode"
-  ],
-  "flagWords": [
-    "hte"
+    "jsonencode",
+    "userpath"
   ]
 }
