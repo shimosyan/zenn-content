@@ -18,6 +18,10 @@
     "libexec",
     "exitcode",
     "jsonencode",
-    "userpath"
+    "userpath",
+    "prestage",
+    "ubiquiti",
+    "gbps",
+    "meraki"
   ]
 }
