@@ -70,11 +70,17 @@ jobs:
 
     - name: Difference Check # 差分が見つかればエラーを返す
       id: terraform_diff_check
-      run: terraform plan -detailed-exitcode # -detailed-exitcode オプションを付与することで、Okta との変更差分を検知するとエラー扱いにしてくれる
+      run: |
+        RESULT=$(terraform plan -parallelism=1 -no-color -input=false)
+        echo "$RESULT"
+        if [ ! "`echo $RESULT | grep 'No changes.'`" ]; then
+          exit 1
+        fi
+      continue-on-error: true
 
 # 以下は Workflow の成否をチャットなどに通知を行うときの処理です。もし必要あったら使ってください。
     - name: Notify Difference Message
-      if: failure() && steps.terraform_diff_check.outcome == 'failure'
+      if: steps.terraform_diff_check.outcome == 'failure'
       run: # 差分が見つかったときに通知処理
 ```
 
