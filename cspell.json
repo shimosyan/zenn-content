@@ -23,6 +23,8 @@
     "ubiquiti",
     "gbps",
     "meraki",
-    "asus"
+    "asus",
+    "intune",
+    "intunewin"
   ]
 }
