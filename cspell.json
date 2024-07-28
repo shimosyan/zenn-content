@@ -25,6 +25,7 @@
     "meraki",
     "asus",
     "intune",
-    "intunewin"
+    "intunewin",
+    "hkey"
   ]
 }
