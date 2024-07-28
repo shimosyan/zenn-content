@@ -26,6 +26,8 @@
     "asus",
     "intune",
     "intunewin",
-    "hkey"
+    "hkey",
+    "hklm",
+    "msiexec"
   ]
 }
