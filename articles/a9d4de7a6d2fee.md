@@ -61,7 +61,7 @@ C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_**_x64__8wekyb3d8bbwe
 
 <!-- cSpell:enable -->さらに調べてみると、前者はユーザーコンテキストで、後者はシステムコンテキストで動作できることがわかってきました。
 
-つまり、今回のケースでは後者の Winget を使うことで解決できるということがわかりました。
+つまり、今回のケースでは後者の Winget を使うことで解決できるということです。
 
 ## 実装からの動作確認について
 
