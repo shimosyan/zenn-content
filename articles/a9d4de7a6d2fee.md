@@ -59,7 +59,7 @@ Intune では「**システム**を指定すると Windows の System アカウ�
 C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_**_x64__8wekyb3d8bbwe\winget.exe
 ```
 
-<!-- cSpell:enable -->さらに調べてみると前者はユーザーコンテキスト、後者はシステムコンテキストで動作できることがわかってきました。
+<!-- cSpell:enable -->さらに調べてみると前者はユーザーコンテキストでの動作ですが、後者はシステムコンテキストで動作できさらに Intune で処理したときに UAC を回避できることがわかってきました。
 
 つまり、今回のケースでは後者の Winget を使うことで解決できるということです。
 
