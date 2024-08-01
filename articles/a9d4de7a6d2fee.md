@@ -47,11 +47,9 @@ Intune では「**システム**を指定するとWindowsのSystemアカウン�
 
 しかし、いろいろ文献を調べてみると Winget の実行バイナリは2種類あることがわかってきました。
 
-<!-- cspell:disable-next-line -->
-一つ目は `winget` コマンドの PATH 先となっている `%LOCALAPPDATA%\Microsoft\WindowsApps\winget.exe`。
+一つ目は `winget` コマンドの PATH 先となっている`%LOCALAPPDATA%\Microsoft\WindowsApps\winget.exe` です。<!-- cspell:disable-line -->
 
-<!-- cspell:disable-next-line -->
-もう一つは `C:\Program FIles\WindowsApps\Microsoft.DesktopAppInstaller_**_x64__8wekyb3d8bbwe\winget.exe` です。(`**` には Winget のバージョンが入ります)
+もう一つは `C:\Program FIles\WindowsApps\Microsoft.DesktopAppInstaller_**_x64__8wekyb3d8bbwe\winget.exe` です。(`**` には Winget のバージョンが入ります)<!-- cspell:disable-line -->
 
 さらに調べてみると、前者はユーザーコンテキストで、後者はシステムコンテキストで動作できることがわかってきました。
 
