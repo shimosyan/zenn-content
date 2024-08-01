@@ -2,7 +2,7 @@
 title: "標準ユーザーに対して Microsoft Intune と Winget を組み合わせアプリケーション配布を実現させたい"
 emoji: "📝"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Intune", "PowerShell", "Windows", "Winget"]
+topics: ["Intune", "Windows", "Winget"]
 published: true
 ---
 
