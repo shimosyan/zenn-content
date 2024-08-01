@@ -28,6 +28,7 @@
     "intunewin",
     "hkey",
     "hklm",
-    "msiexec"
+    "msiexec",
+    "winget"
   ]
 }
