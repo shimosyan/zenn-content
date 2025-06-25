@@ -57,9 +57,93 @@ C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_**_x64__8wekyb3d8bbwe
 
 つまり、今回のケースでは後者の Winget を使うことで解決できるということです。
 
-## 実装からの動作確認について
+## スクリプトの作成
 
-~~書くのが大変なので~~今回は割愛しますが、私のところではシステムコンテキストかユーザーコンテキストかどちらで実行されているかを判定して、それにあわせたバイナリを選択してコマンドを実行するスクリプトを書きました。今のところ問題なく動いています。
+下記のスクリプトを作成して `.intunewin` 形式にパッケージングしてください。ファイル名、ファイル形式は以下で作成してください。
+
+- ファイル名：`winget.ps1`
+- 文字コード：`UTF-8`
+- 改行コード：`CRLF`
+
+```powershell
+Param (
+  [switch]$install,
+  [switch]$uninstall,
+  [switch]$user,
+  [switch]$system,
+  [parameter(mandatory=$true)][string]$applicationId
+)
+
+if ($install -eq $uninstall){
+  Write-Error "Either '-install' or '-uninstall' must be entered."
+}
+
+if ($user -eq $system){
+  Write-Error "Either '-user' or '-system' must be entered."
+}
+
+if ($system -eq $TRUE) {
+  # Check Administrator
+  $isAdmin = [System.Security.Principal.WindowsPrincipal]::new([System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
+
+  if ($isAdmin -eq $FALSE) {
+    Write-Error "Administrator priviledges are required when using '-system'."
+  }
+
+  $wingetExe = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_*__8wekyb3d8bbwe\winget.exe"
+
+  if ($wingetExe.count -gt 1){
+    $wingetExe = $wingetExe[-1].Path
+  }
+  if (!$wingetExe){
+    Write-Error "Winget not installed"
+  }
+}
+
+if ($user -eq $TRUE) {
+  $wingetExe = Resolve-Path "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget.exe"
+}
+
+Write-Host "Winget Path: $wingetExe"
+
+if ($install -eq $TRUE) {
+  & $wingetExe install -e --silent --accept-source-agreements --id $applicationId
+}
+
+if ($uninstall -eq $TRUE) {
+  & $wingetExe uninstall -e --silent --id $applicationId
+}
+
+```
+
+## Intune の配布設定
+
+上記スクリプトを格納した `.intunewin` ファイルを Intune にアップロードします。
+
+配布設定は以下のように設定します。
+
+### インストールコマンドおよびアンインストールコマンド
+
+下記文字列を入力します。一部書き換えないといけない箇所があるので下表から置き換えてください。
+
+```sh
+powershell -ExecutionPolicy Bypass ".\winget.ps1 $mode $context 'id'"
+```
+
+|コマンド内の文字列|置き換える値|
+|---|---|
+|`$mode`|`-install` または `-uninstall` どちらかを入力します。入力した値によってインストールまたはアンインストールのモードが変わります。|
+|`$context`|`-user` または `-system` どちらかを入力します。入力した値によってユーザーコンテキストまたはシステムコンテキストのモードが変わります。|
+|`id`|Winget で処理したいアプリケーションを指定する ID|
+
+以下はサンプルです。
+
+|やりたいこと|コマンド例|
+|---|---|
+|Google Chrome をシステムコンテキストでインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -install -system 'Google.Chrome'"`|
+|Google Chrome をシステムコンテキストでアンインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -uninstall -system 'Google.Chrome'"`|
+
+## 検出規則の注意点
 
 Intune の検出ルールで Winget コマンドを使う際は、こちらもコンテキストごとに Winget のバイナリを切り替える実装をする必要があることだけ注意が必要です。
 
