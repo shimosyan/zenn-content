@@ -143,9 +143,9 @@ powershell -ExecutionPolicy Bypass ".\winget.ps1 $mode $context 'id'"
 |Google Chrome をシステムコンテキストでインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -install -system 'Google.Chrome'"`|
 |Google Chrome をシステムコンテキストでアンインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -uninstall -system 'Google.Chrome'"`|
 
-## 検出規則の注意点
+## 検出規則
 
-Intune の検出ルールで Winget コマンドを使う際は、こちらもコンテキストごとに Winget のバイナリを切り替える実装をする必要があることだけ注意が必要です。
+Intune の検出ルールでスクリプトを書いて Winget コマンドでインストールの有無を検出することは技術的に可能ですが、いろいろデバッグしにくいところなので素直にファイルの有無で検出した方が良いかも。
 
 ## 最後に
 
