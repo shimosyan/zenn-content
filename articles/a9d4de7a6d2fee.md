@@ -107,11 +107,11 @@ if ($user -eq $TRUE) {
 Write-Host "Winget Path: $wingetExe"
 
 if ($install -eq $TRUE) {
-  Start-Process -FilePath $wingetExe -ArgumentList "install -e --silent --accept-source-agreements --id $applicationId" -Wait -WindowStyle Hidden -PassThru
+  & $wingetExe install -e --silent --accept-source-agreements --accept-package-agreements --id $applicationId
 }
 
 if ($uninstall -eq $TRUE) {
-  Start-Process -FilePath $wingetExe -ArgumentList "uninstall -e --silent --id $applicationId" -Wait -WindowStyle Hidden -PassThru
+  & $wingetExe uninstall -e --silent --id $applicationId
 }
 
 ```
