@@ -107,11 +107,11 @@ if ($user -eq $TRUE) {
 Write-Host "Winget Path: $wingetExe"
 
 if ($install -eq $TRUE) {
-  & $wingetExe install -e --silent --accept-source-agreements --accept-package-agreements --id $applicationId
+  Start-Process -WindowsStyle Hidden -FilePath $wingetExe -ArgumentList "install -e --silent --accept-source-agreements --accept-package-agreements --id $applicationId" -Wait
 }
 
 if ($uninstall -eq $TRUE) {
-  & $wingetExe uninstall -e --silent --id $applicationId
+  Start-Process -WindowsStyle Hidden -FilePath $wingetExe -ArgumentList "uninstall -e --silent --id $applicationId" -Wait
 }
 
 ```
@@ -140,8 +140,8 @@ powershell -ExecutionPolicy Bypass ".\winget.ps1 $mode $context 'id'"
 
 |やりたいこと|コマンド例|
 |---|---|
-|Google Chrome をシステムコンテキストでインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -install -system 'Google.Chrome'"`|
-|Google Chrome をシステムコンテキストでアンインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -uninstall -system 'Google.Chrome'"`|
+|Google Chrome をシステムコンテキストでインストール|`powershell -WindowsStyle Hidden -ExecutionPolicy Bypass ".\winget.ps1 -install -system 'Google.Chrome'"`|
+|Google Chrome をシステムコンテキストでアンインストール|`powershell -WindowsStyle Hidden -ExecutionPolicy Bypass ".\winget.ps1 -uninstall -system 'Google.Chrome'"`|
 
 :::message
 
