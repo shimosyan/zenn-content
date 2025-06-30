@@ -14,6 +14,13 @@ Intune と Winget を組み合わせてアプリケーションを配布する�
 また独自調査のため誤った説明が入っている可能性があります。
 :::
 
+:::message
+この Winget を使った方法は AutoPilot の登録状態ページ（EnrollmentStatusPage、ESP）で利用することができません。
+
+登録状態ページでアプリケーションをインストールしたい場合は MSI を使ったインストールを検討ください。
+@[card](https://zenn.dev/shimosyan/articles/2f34f66d1d5b9a)
+:::
+
 ## これは何？
 
 Intune で Windows 端末に対してアプリケーションを配布する作業、とてもめんどくさいです。
