@@ -147,8 +147,8 @@ powershell -ExecutionPolicy Bypass ".\winget.ps1 $mode $context 'id'"
 
 |やりたいこと|コマンド例|
 |---|---|
-|Google Chrome をシステムコンテキストでインストール|`powershell -WindowsStyle Hidden -ExecutionPolicy Bypass ".\winget.ps1 -install -system 'Google.Chrome'"`|
-|Google Chrome をシステムコンテキストでアンインストール|`powershell -WindowsStyle Hidden -ExecutionPolicy Bypass ".\winget.ps1 -uninstall -system 'Google.Chrome'"`|
+|Google Chrome をシステムコンテキストでインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -install -system 'Google.Chrome'"`|
+|Google Chrome をシステムコンテキストでアンインストール|`powershell -ExecutionPolicy Bypass ".\winget.ps1 -uninstall -system 'Google.Chrome'"`|
 
 :::message
 
