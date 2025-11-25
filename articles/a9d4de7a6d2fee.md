@@ -28,7 +28,7 @@ Intune で Windows 端末に対してアプリケーションを配布する作�
 https://zenn.dev/shimosyan/articles/2f34f66d1d5b9a
 
 こちらの記事でも書いたとおり、ある程度共通化・簡略化をしてアプリケーションを配布を実現したいです。
-その方法の1つとして Microsoft 公式のパッケージマネージャーである Winget と組み合わせる方法があります。
+その方法の 1 つとして Microsoft 公式のパッケージマネージャーである Winget と組み合わせる方法があります。
 
 ## 今回の課題
 
@@ -54,7 +54,7 @@ Intune では「**システム**を指定すると Windows の System アカウ�
 %LOCALAPPDATA%\Microsoft\WindowsApps\winget.exe
 ```
 
-もう1つは下記のパスです。(`**` には Winget のバージョンが入ります）
+もう 1 つは下記のパスです。(`**` には Winget のバージョンが入ります）
 
 ```sh
 C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_**_x64__8wekyb3d8bbwe\winget.exe
