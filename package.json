@@ -26,6 +26,6 @@
     "textlint": "^12.0.0",
     "textlint-rule-preset-ja-spacing": "^2.1.3",
     "textlint-rule-preset-ja-technical-writing": "^12.0.0",
-    "textlint-rule-preset-jtf-style": "^2.3.12"
+    "textlint-rule-preset-jtf-style": "^3.0.0"
   }
 }
