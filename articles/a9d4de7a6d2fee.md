@@ -15,7 +15,7 @@ Intune と Winget を組み合わせてアプリケーションを配布する�
 :::
 
 :::message
-この Winget を使った方法は AutoPilot の登録状態ページ（EnrollmentStatusPage、ESP）で利用することができません。
+この Winget を使った方法は AutoPilot の登録状態ページ（EnrollmentStatusPage、ESP）で利用できません。
 
 登録状態ページでアプリケーションをインストールしたい場合は MSI を使ったインストールを検討ください。
 @[card](https://zenn.dev/shimosyan/articles/2f34f66d1d5b9a)
@@ -28,7 +28,7 @@ Intune で Windows 端末に対してアプリケーションを配布する作�
 https://zenn.dev/shimosyan/articles/2f34f66d1d5b9a
 
 こちらの記事でも書いたとおり、ある程度共通化・簡略化をしてアプリケーションを配布を実現したいです。
-その方法の一つとして Microsoft 公式のパッケージマネージャーである Winget と組み合わせる方法があります。
+その方法の1つとして Microsoft 公式のパッケージマネージャーである Winget と組み合わせる方法があります。
 
 ## 今回の課題
 
@@ -42,11 +42,11 @@ Intune では「**システム**を指定すると Windows の System アカウ�
 
 ## Winget をシステムコンテキストで実行させるには
 
-標準ユーザーでログインしている端末ではユーザーコンテキストでは管理者特権を行使することができません。必然的にシステムコンテキストで実行させるしかなくなります。
+標準ユーザーでログインしている端末ではユーザーコンテキストでは管理者特権を行使できません。必然的にシステムコンテキストで実行させるしかなくなります。
 
 `winget install --id **.**` のような一般的なインストールコマンドのまま Intune の配布設定をユーザーからシステムに作り直しましたが結果が変わりません。
 
-しかし、いろいろ文献を調べてみると Winget の実行バイナリは2種類あることがわかってきました。
+しかし、いろいろ文献を調べてみると Winget の実行バイナリは 2 種類あることがわかってきました。
 
 <!-- cSpell:disable -->一つ目は `winget` コマンドの PATH 先となっている下記のパスです。
 
@@ -54,7 +54,7 @@ Intune では「**システム**を指定すると Windows の System アカウ�
 %LOCALAPPDATA%\Microsoft\WindowsApps\winget.exe
 ```
 
-もう一つは下記のパスです。(`**` には Winget のバージョンが入ります)
+もう1つは下記のパスです。(`**` には Winget のバージョンが入ります）
 
 ```sh
 C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_**_x64__8wekyb3d8bbwe\winget.exe
