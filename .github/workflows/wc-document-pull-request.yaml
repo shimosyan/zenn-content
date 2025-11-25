@@ -47,3 +47,11 @@ jobs:
         run: github-comment exec -k common-error -var env:Staging -var title:"Check Markdown Failed" -- markdownlint-cli2 "**/*.md" --config ".markdownlint.json"
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: Install NPM Packages
+        run: npm ci
+
+      - name: Lint Text Files
+        run: github-comment exec -k textlint-error -var env:Staging -var title:"Check Textlint Failed" -- npm run lint:nofix
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
