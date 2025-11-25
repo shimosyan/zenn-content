@@ -27,12 +27,3 @@ exec:
         ## {{template "status" .}} {{.Vars.title}} Failed ({{.Vars.env}})
 
         {{template "base" .}}
-
-  textlint-error:
-    - when: ExitCode != 0
-      template: |
-        ## {{template "status" .}} {{.Vars.title}} Failed ({{.Vars.env}})
-
-        Please run `npm run lint`.
-
-        {{template "base" .}}
