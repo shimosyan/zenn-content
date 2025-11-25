@@ -9,6 +9,7 @@ on:
       - .github/workflows/**
       - aqua.yaml
       - aqua-checksums.json
+      - package-lock.json
   workflow_dispatch:
     inputs:
       pr_numbers:
