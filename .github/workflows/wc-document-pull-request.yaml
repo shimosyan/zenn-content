@@ -66,9 +66,6 @@ jobs:
           app_id: ${{secrets.APP_ID}}
           app_private_key: ${{ secrets.PRIVATE_KEY }}
           commit_message: "update: Textlint fixes"
-          files: |
-            articles/*.md
-            books/**/*.md
 
       - name: Install markdownlint
         run: npm install -g markdownlint-cli2
