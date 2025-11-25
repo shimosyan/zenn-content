@@ -12,6 +12,6 @@
     },
     "@proofdict/proofdict": {
       "dictURL": "https://tanabebe.github.io/proof-dictionary/"
-    },
+    }
   }
 }
