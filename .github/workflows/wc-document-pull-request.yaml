@@ -43,6 +43,9 @@ jobs:
       - name: Install NPM Packages
         run: npm ci
 
+      #
+      # 文章の校閲は自動修正する
+      #
       - name: Lint Text Files
         run: github-comment exec -k common -var env:Staging -var title:"Check Textlint" -- npm run lint
         env:
@@ -67,6 +70,9 @@ jobs:
           app_private_key: ${{ secrets.PRIVATE_KEY }}
           commit_message: "update: Textlint fixes"
 
+      #
+      # Markdown の構文チェックは意図しない変更を防ぐため問題あればエラーを返す
+      #
       - name: Install markdownlint
         run: npm install -g markdownlint-cli2
 
