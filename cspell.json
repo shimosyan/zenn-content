@@ -1,34 +1,13 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": [
-    "shimosyan",
-    "zenn",
-    "textlint",
-    "jamf",
-    "azuread",
-    "aws",
-    "awscli",
-    "hashicorp",
-    "terraform",
-    "tfstate",
-    "tfvars",
-    "rockstar",
-    "proofdict",
-    "libexec",
-    "exitcode",
-    "jsonencode",
-    "userpath",
-    "prestage",
-    "ubiquiti",
-    "gbps",
-    "meraki",
-    "asus",
-    "intune",
-    "intunewin",
-    "hkey",
-    "hklm",
-    "msiexec",
-    "winget"
+  "dictionaryDefinitions": [
+    {
+      "name": "myWords",
+      "path": "./.config/dictionary.txt"
+    }
+  ],
+  "dictionaries": [
+    "myWords"
   ]
 }
