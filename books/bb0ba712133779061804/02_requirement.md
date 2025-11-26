@@ -8,9 +8,9 @@ title: "開発環境の準備"
 
 - **Okta**
 - **GitHub**
-  - Private リポジトリで運用する場合は、GitHub Actions の従量課金契約が必要です。
+  - Private リポジトリで運用する場合は、GitHub Actions の従量課金契約が必要。
 - **Amazon Web Service**
-  - S3 と IAM を使用します。
+  - S3 と IAM を使用。
 
 ## ✅ Terraformのインストール
 
@@ -19,6 +19,7 @@ Terraform を既にインストール済みでしたら、こちらのセクシ�
 
 :::message
 インストールには[Homebrew](https://brew.sh/index_ja)を使用します。Homebrew が導入されていない場合は各自導入してください。
+
 :::
 
 ```shell
@@ -29,10 +30,10 @@ brew install terraform
 
 Terraform では、コードの内容と Okta の実データとの照らし合わせのために`terraform.tfstate`ファイルが生成されます。
 
-通常はローカルに作成され Git 管理を行いますが、今回の目的のように GitHub Actions を使って自動反映を行うと最新の`terraform.tfstate`が Git 管理にできません。
+通常はローカルに作成され Git による管理しますが、今回の目的のように GitHub Actions を使って自動反映すると最新の`terraform.tfstate`が Git 管理にできません。
 常に最新の`terraform.tfstate`を保持するために今回は保存先に AWS S3 を使います。
 
-そのため、AWS とやり取りするためにコマンドラインツールのインストール・設定を行います。
+そのため、AWS とやり取りするためにコマンドラインツールのインストールと設定を実施します。
 
 AWSCLI を既にインストール済みでしたら、こちらのセクションはスキップしてください。
 

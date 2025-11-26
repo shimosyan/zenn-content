@@ -6,9 +6,23 @@
         "space": "always"
       }
     },
-    "preset-ja-technical-writing": true,
+    "preset-ja-technical-writing": {
+      "sentence-length": {
+        "max": 120
+      },
+      "max-ten": {
+        "max": 3
+      },
+      "no-doubled-joshi": {
+        "allow": ["も"]
+      },
+      "ja-no-successive-word": false,
+      "no-exclamation-question-mark": false,
+      "ja-no-weak-phrase": false
+    },
     "preset-jtf-style": {
-      "3.1.1.全角文字と半角文字の間": false
+      "3.1.1.全角文字と半角文字の間": false,
+      "4.3.2.大かっこ［］": false
     },
     "@proofdict/proofdict": {
       "dictURL": "https://tanabebe.github.io/proof-dictionary/"
