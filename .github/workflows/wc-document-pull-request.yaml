@@ -47,7 +47,7 @@ jobs:
         run: npm ci
 
       - name: Lint Text Files
-        run: github-comment exec -k common-error -var env:Staging -var title:"Check Textlint" -- npm run lint
+        run: github-comment exec -k common -var env:Staging -var title:"Check Textlint" -- npm run lint
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
