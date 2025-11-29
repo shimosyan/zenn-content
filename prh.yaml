@@ -3,11 +3,15 @@ rules:
   - expected: Google
     pattern: google
   - expected: GitHub
-    pattern: github
+    pattern:
+      - github
+      - Github
   - expected: GitHub Actions
     pattern: /github ?actions?/i
     specs:
       - from: github actions
+        to: GitHub Actions
+      - from: Github Actions
         to: GitHub Actions
       - from: GitHub Action
         to: GitHub Actions
@@ -23,11 +27,37 @@ rules:
       - from: PullRequest
         to: Pull Request
   - expected: AWS
-    pattern: aws
+    pattern:
+      - aws
+      - Aws
+  - expected: CloudFront
+    pattern:
+      - cloudfront
+      - Cloudfront
+  - expected: Route53
+    pattern: /route ?53/i
+  - expected: S3
+    pattern: s3
+    options:
+      wordBoundary: true
+  - expected: Cloudflare
+    pattern:
+      - cloudflare
+      - CloudFlare
+  - expected: Markdown
+    pattern:
+      - markdown
+      - MarkDown
   - expected: WordPress
-    pattern: wordpress
+    pattern:
+      - wordpress
+      - Wordpress
   - expected: Terraform
     pattern: terraform
+  - expected: YouTube
+    pattern:
+      - youtube
+      - Youtube
   - expected: Hugo
     pattern: hugo
   - expected: Okta
