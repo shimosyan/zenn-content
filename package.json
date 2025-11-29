@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "preview": "zenn preview",
-    "lint": "textlint --fix \"./**/*.md\""
+    "lint": "textlint --fix \"./**/*.md\"",
+    "lint:nofix": "textlint \"./**/*.md\""
   },
   "repository": {
     "type": "git",
