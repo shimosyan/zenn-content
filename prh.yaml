@@ -1,0 +1,72 @@
+version: 1
+rules:
+  - expected: Google
+    pattern: google
+  - expected: GitHub
+    pattern: github
+  - expected: GitHub Actions
+    pattern: /github ?actions?/i
+    specs:
+      - from: github actions
+        to: GitHub Actions
+      - from: GitHub Action
+        to: GitHub Actions
+      - from: GitHubActions
+        to: GitHub Actions
+  - expected: Pull Request
+    pattern: /Pull ?Requests?/i
+    specs:
+      - from: pull request
+        to: Pull Request
+      - from: Pull Requests
+        to: Pull Request
+      - from: PullRequest
+        to: Pull Request
+  - expected: AWS
+    pattern: aws
+  - expected: WordPress
+    pattern: wordpress
+  - expected: Terraform
+    pattern: terraform
+  - expected: Hugo
+    pattern: hugo
+  - expected: Okta
+    pattern: okta
+  - expected: Microsoft
+    pattern: microsoft
+  - expected: Entra
+    pattern: entra
+  - expected: Intune
+    pattern: intune
+  - expected: Jamf
+    pattern: jamf
+    options:
+      wordBoundary: true
+  - expected: Jamf Pro
+    pattern: /jamf ?pro/i
+    specs:
+      - from: jamfpro # cSpell:ignore jamfpro
+        to: Jamf Pro
+      - from: jamf pro
+        to: Jamf Pro
+      - from: Jamf Pro
+        to: Jamf Pro
+    options:
+      wordBoundary: true
+  - expected: Mac
+    pattern: mac
+    options:
+      wordBoundary: true
+  - expected: macOS
+    pattern: /mac ?os/i
+    specs:
+      - from: macos
+        to: macOS
+      - from: mac os
+        to: macOS
+      - from: MacOS
+        to: macOS
+      - from: macOS
+        to: macOS
+    options:
+      wordBoundary: true
