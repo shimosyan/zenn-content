@@ -1,0 +1,26 @@
+version: 1
+rules:
+  - expected: Google
+    specs:
+      - from: google
+        to: Google
+  - expected: GitHub
+    specs:
+      - from: github
+        to: GitHub
+  - expected: AWS
+    specs:
+      - from: aws
+        to: AWS
+  - expected: WordPress
+    specs:
+      - from: wordpress
+        to: WordPress
+  - expected: Terraform
+    specs:
+      - from: terraform
+        to: Terraform
+  - expected: Hugo
+    specs:
+      - from: hugo
+        to: Hugo

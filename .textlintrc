@@ -24,6 +24,9 @@
       "3.1.1.全角文字と半角文字の間": false,
       "4.3.2.大かっこ［］": false
     },
+    "prh": {
+      "rulePaths" :["prh.yaml"]
+    },
     "@proofdict/proofdict": {
       "dictURL": "https://tanabebe.github.io/proof-dictionary/"
     }
