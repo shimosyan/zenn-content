@@ -26,6 +26,7 @@ jobs:
 
       - uses: gr2m/merge-schedule-action@a9b6ddcf1282dfd66907bda8e7941dff59f03bad # v2.7.0
         with:
+          merge_method: squash
           time_zone: "Asia/Tokyo"
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
