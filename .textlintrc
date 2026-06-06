@@ -18,7 +18,9 @@
       },
       "ja-no-successive-word": false,
       "no-exclamation-question-mark": false,
-      "ja-no-weak-phrase": false
+      "ja-no-weak-phrase": false,
+      "ja-space-around-link": false,
+      "ja-space-around-code": false
     },
     "preset-jtf-style": {
       "3.1.1.全角文字と半角文字の間": false,
